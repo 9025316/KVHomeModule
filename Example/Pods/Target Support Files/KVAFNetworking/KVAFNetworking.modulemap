@@ -1,0 +1,6 @@
+framework module KVAFNetworking {
+  umbrella header "KVAFNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}

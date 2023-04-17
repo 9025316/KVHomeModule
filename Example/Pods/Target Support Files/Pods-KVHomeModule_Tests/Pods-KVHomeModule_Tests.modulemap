@@ -1,0 +1,6 @@
+framework module Pods_KVHomeModule_Tests {
+  umbrella header "Pods-KVHomeModule_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

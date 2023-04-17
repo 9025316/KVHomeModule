@@ -1,0 +1,57 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BeeHive (1.0.0)
+  - KVAFNetworking (1.0.1):
+    - AFNetworking (~> 3.1.0)
+  - KVHomeModule (0.1.0):
+    - BeeHive (~> 1.0.0)
+    - KVAFNetworking
+    - Masonry
+    - SDWebImage
+  - Masonry (1.1.0)
+  - SDWebImage (5.15.5):
+    - SDWebImage/Core (= 5.15.5)
+  - SDWebImage/Core (5.15.5)
+
+DEPENDENCIES:
+  - KVAFNetworking (from `../../KVAFNetworking`)
+  - KVHomeModule (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - BeeHive
+    - Masonry
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  KVAFNetworking:
+    :path: "../../KVAFNetworking"
+  KVHomeModule:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 19827bce8c8d25b16bea185837cb66976c23f8fe
+  BeeHive: dbb793e909749ea3a30e205a882f1229bdc13190
+  KVAFNetworking: beb041b80d31d51ef64e626bd7a79f17e3c4d813
+  KVHomeModule: a6879325d4a8fa44427582a07582f0da4d93a08b
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+
+PODFILE CHECKSUM: b26b7e00b5431f3cbb9c70a5371f76c2fa817395
+
+COCOAPODS: 1.11.0
