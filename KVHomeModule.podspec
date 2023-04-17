@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KVHomeModule'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of KVHomeModule.'
 
 # This description is used to generate tags and improve search results.
@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
   
   s.dependency 'Masonry'
   s.dependency 'SDWebImage'
-  s.dependency 'KVAFNetworking'
+  s.dependency 'KVAFNetworking', '~>1.1.0'
   s.dependency 'BeeHive', '~>1.0.0'
   
   s.prefix_header_contents = '#import "Masonry.h"','#import "UIImageView+WebCache.h"','#import "KVNetworking.h"'

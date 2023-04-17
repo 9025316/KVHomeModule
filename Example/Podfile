@@ -4,7 +4,7 @@ platform :ios, '10.0'
 
 target 'KVHomeModule_Example' do
   pod 'KVHomeModule', :path => '../'
-  pod 'KVAFNetworking', :path => '../../KVAFNetworking' #本地库
+#  pod 'KVAFNetworking', :path => '../../KVAFNetworking' #本地库
 
   target 'KVHomeModule_Tests' do
     inherit! :search_paths
