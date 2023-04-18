@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  KVHomeViewController.h
 //  HomeModule
 //
 //  Created by MacBook Pro on 2023/4/6.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController
+@interface KVHomeViewController : UIViewController
 
 @end
 

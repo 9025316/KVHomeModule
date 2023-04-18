@@ -15,11 +15,11 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - BeeHive (1.0.0)
-  - KVAFNetworking (1.0.1):
+  - KVAFNetworking (1.1.0):
     - AFNetworking (~> 3.1.0)
-  - KVHomeModule (0.1.0):
+  - KVHomeModule (0.1.2):
     - BeeHive (~> 1.0.0)
-    - KVAFNetworking
+    - KVAFNetworking (~> 1.1.0)
     - Masonry
     - SDWebImage
   - Masonry (1.1.0)
@@ -47,8 +47,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 19827bce8c8d25b16bea185837cb66976c23f8fe
   BeeHive: dbb793e909749ea3a30e205a882f1229bdc13190
-  KVAFNetworking: beb041b80d31d51ef64e626bd7a79f17e3c4d813
-  KVHomeModule: a6879325d4a8fa44427582a07582f0da4d93a08b
+  KVAFNetworking: 01097a02c8d2deafaecca10142eb6f637e5fcd6d
+  KVHomeModule: c0075cd337153668728dc5304376be808588d5e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
 

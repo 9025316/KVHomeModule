@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "HomeViewController.h"
+#import "KVHomeViewController.h"
 #import "UIView+AZGradient.h"
 #import "UIView+CornerRadius.h"
 #import "UIView+Frame.h"
