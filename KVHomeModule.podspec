@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KVHomeModule'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'A short description of KVHomeModule.'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '韩问' => '9025316@qq.com' }
-  s.source           = { :git => 'https://github.com/9025316/KVHomeModule.git', :tag => "0.1.7" }
+  s.source           = { :git => 'https://github.com/9025316/KVHomeModule.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
