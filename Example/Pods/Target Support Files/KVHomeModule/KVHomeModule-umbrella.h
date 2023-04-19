@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "KVHomeModule.h"
+#import "KVHomeServiceProtocol.h"
 #import "KVHomeViewController.h"
 #import "UIView+AZGradient.h"
 #import "UIView+CornerRadius.h"

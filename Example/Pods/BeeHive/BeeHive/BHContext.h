@@ -20,19 +20,18 @@ typedef enum
 }BHEnvironmentType;
 
 
-@interface BHContext : NSObject
+@interface BHContext : NSObject <NSCopying>
 
 //global env
-@property(nonatomic, readonly) BHEnvironmentType env;
+@property(nonatomic, assign) BHEnvironmentType env;
 
 //global config
 @property(nonatomic, strong) BHConfig *config;
 
 //application appkey
 @property(nonatomic, strong) NSString *appkey;
-
-//application Mtop appkey
-@property(nonatomic, strong) NSString *Mtopkey;
+//customEvent>=1000
+@property(nonatomic, assign) NSInteger customEvent;
 
 @property(nonatomic, strong) UIApplication *application;
 
@@ -41,10 +40,6 @@ typedef enum
 @property(nonatomic, strong) NSString *moduleConfigName;
 
 @property(nonatomic, strong) NSString *serviceConfigName;
-
-@property(nonatomic, strong) NSMutableDictionary *modulesByName;
-
-@property(nonatomic, strong) NSMutableDictionary *servicesByName;
 
 //3D-Touch model
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > 80400
@@ -60,16 +55,18 @@ typedef enum
 //user Activity Model
 @property (nonatomic, strong) BHUserActivityItem *userActivityItem;
 
-+(instancetype) shareInstance;
+//watch Model
+@property (nonatomic, strong) BHWatchItem *watchItem;
 
+//custom param
+@property (nonatomic, copy) NSDictionary *customParam;
 
-//设置对象在全局上下文中可见
--(void)setVisibility:(Protocol *)proto service:(id<BHServiceProtocol>) service __attribute((deprecated(("使用serviceprotocol协议中的singleton来注册单例"))));
++ (instancetype)shareInstance;
 
-//在全局上下文中获取对象
--(id<BHServiceProtocol>) serviceInstance:(Protocol *)proto __attribute((deprecated(("使用serviceprotocol协议中的singleton来注册单例, 用CreateService来获取单例"))));
+- (void)addServiceWithImplInstance:(id)implInstance serviceName:(NSString *)serviceName;
 
-//设置对象在全局上下文中可见
--(void)setInvisibility:(Protocol *)proto __attribute((deprecated(("废弃没有什么作用"))));
+- (void)removeServiceWithServiceName:(NSString *)serviceName;
+
+- (id)getServiceInstanceFromServiceName:(NSString *)serviceName;
 
 @end

@@ -7,6 +7,7 @@
  */
 
 #import "BHTimeProfiler.h"
+#import "BHCommon.h"
 #include <QuartzCore/QuartzCore.h>
 
 
@@ -101,7 +102,7 @@
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString *filePath =  [documentPath stringByAppendingPathComponent:[fileName stringByAppendingPathExtension:@"txt"]];
     
-    NSLog(@"TMTimeProfiler::SaveFilePath is %@", filePath);
+    BHLog(@"TMTimeProfiler::SaveFilePath is %@", filePath);
     
     BOOL res=[[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
     if (!res) {
@@ -114,7 +115,9 @@
     {
         CFTimeInterval current = [[self.timeDataDic objectForKey:eventName] doubleValue];
         
-        NSString *output = [NSString stringWithFormat:@"%@ time stamp  %g and execute for  %g\n", eventName, current, (current - self.lastTime) * 1000];
+        NSString *output = [NSString stringWithFormat:@"[%s] time stamp: %gms and execute for %gms -> \n", [eventName UTF8String],
+                            (current - self.recordStartTime) * 1000,
+                            (current - self.lastTime) * 1000];
         
         [handle writeData:[output dataUsingEncoding:NSUTF8StringEncoding]];
         

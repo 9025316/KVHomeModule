@@ -11,12 +11,15 @@
 #endif
 
 #import "BeeHive.h"
+#import "BHAnnotation.h"
 #import "BHAppDelegate.h"
+#import "BHCommon.h"
 #import "BHConfig.h"
 #import "BHContext.h"
 #import "BHDefines.h"
 #import "BHModuleManager.h"
 #import "BHModuleProtocol.h"
+#import "BHRouter.h"
 #import "BHServiceManager.h"
 #import "BHServiceProtocol.h"
 #import "BHTimeProfiler.h"

@@ -6,14 +6,14 @@
  * For the full copyright and license information,please view the LICENSE file in the root directory of this source tree.
  */
 
-#import <Foundation/Foundation.h>
-#import "BHAnnotation.h"
-@protocol BHServiceProtocol <NSObject>
+#ifndef BHCommon_h
+#define BHCommon_h
 
-@optional
+// Debug Logging
+#ifdef DEBUG
+#define BHLog(x, ...) NSLog(x, ## __VA_ARGS__);
+#else
+#define BHLog(x, ...)
+#endif
 
-+ (BOOL)singleton;
-
-+ (id)shareInstance;
-
-@end
+#endif /* BHCommon_h */

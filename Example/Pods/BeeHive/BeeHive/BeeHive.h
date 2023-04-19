@@ -18,7 +18,7 @@
 //save application global context
 @property(nonatomic, strong) BHContext *context;
 
-@property (nonatomic, assign) BOOL enableExpection;
+@property (nonatomic, assign) BOOL enableException;
 
 + (instancetype)shareInstance;
 
@@ -27,6 +27,8 @@
 - (id)createService:(Protocol *)proto;
 
 //Registration is recommended to use a static way
--(void)registerService:(Protocol *)proto service:(Class) serviceClass;
+- (void)registerService:(Protocol *)proto service:(Class) serviceClass;
 
++ (void)triggerCustomEvent:(NSInteger)eventType;
+    
 @end

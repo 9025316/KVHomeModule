@@ -8,53 +8,76 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+#import <UserNotifications/UserNotifications.h>
+#endif
 
 
 @interface BHAppDelegate : UIResponder <UIApplicationDelegate>
 
 @end
 
-typedef void (^notificationResultHandler)(UIBackgroundFetchResult);
+typedef void (^BHNotificationResultHandler)(UIBackgroundFetchResult);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+typedef void (^BHNotificationPresentationOptionsHandler)(UNNotificationPresentationOptions options);
+typedef void (^BHNotificationCompletionHandler)();
+#endif
 
 @interface BHNotificationsItem : NSObject
 
 @property (nonatomic, strong) NSError *notificationsError;
 @property (nonatomic, strong) NSData *deviceToken;
 @property (nonatomic, strong) NSDictionary *userInfo;
-@property (nonatomic, assign) notificationResultHandler notifciationResultHander;
+@property (nonatomic, copy) BHNotificationResultHandler notificationResultHander;
 @property (nonatomic, strong) UILocalNotification *localNotification;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+@property (nonatomic, strong) UNNotification *notification;
+@property (nonatomic, strong) UNNotificationResponse *notificationResponse;
+@property (nonatomic, copy) BHNotificationPresentationOptionsHandler notificationPresentationOptionsHandler;
+@property (nonatomic, copy) BHNotificationCompletionHandler notificationCompletionHandler;
+@property (nonatomic, strong) UNUserNotificationCenter *center;
+#endif
 
 @end
 
 @interface BHOpenURLItem : NSObject
 
 @property (nonatomic, strong) NSURL *openURL;
-@property (nonatomic, strong) NSString *sourceApplication;
+@property (nonatomic, copy) NSString *sourceApplication;
+@property (nonatomic, strong) id annotation;
 @property (nonatomic, strong) NSDictionary *options;
 
 @end
 
-typedef void (^shortcutItemCompletionHandler)(BOOL);
+typedef void (^BHShortcutCompletionHandler)(BOOL);
 
 @interface BHShortcutItem : NSObject
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > 80400
 @property(nonatomic, strong) UIApplicationShortcutItem *shortcutItem;
-@property(nonatomic, copy) shortcutItemCompletionHandler scompletionHandler;
+@property(nonatomic, copy) BHShortcutCompletionHandler scompletionHandler;
 #endif
 
 @end
 
 
-typedef void (^restorationHandler)(NSArray *);
+typedef void (^BHUserActivityRestorationHandler)(NSArray *);
 
 @interface BHUserActivityItem : NSObject
 
-@property (nonatomic, strong) NSString *userActivityType;
+@property (nonatomic, copy) NSString *userActivityType;
 @property (nonatomic, strong) NSUserActivity *userActivity;
 @property (nonatomic, strong) NSError *userActivityError;
-@property (nonatomic, strong) restorationHandler restorationHandler;
+@property (nonatomic, copy) BHUserActivityRestorationHandler restorationHandler;
 
+@end
+
+typedef void (^BHWatchReplyHandler)(NSDictionary *replyInfo);
+
+@interface BHWatchItem : NSObject
+
+@property (nonatomic, strong) NSDictionary *userInfo;
+@property (nonatomic, copy) BHWatchReplyHandler replyHandler;
 
 @end
 

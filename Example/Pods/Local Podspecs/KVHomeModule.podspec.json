@@ -1,6 +1,6 @@
 {
   "name": "KVHomeModule",
-  "version": "0.1.2",
+  "version": "0.1.8",
   "summary": "A short description of KVHomeModule.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/9025316/KVHomeModule",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/9025316/KVHomeModule.git",
-    "tag": "0.1.2"
+    "tag": "0.1.8"
   },
   "platforms": {
     "ios": "10.0"
@@ -35,7 +35,7 @@
       "~>1.1.0"
     ],
     "BeeHive": [
-      "~>1.0.0"
+      "~>1.6.0"
     ]
   },
   "prefix_header_contents": [

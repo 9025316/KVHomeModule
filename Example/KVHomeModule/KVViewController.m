@@ -11,6 +11,9 @@
 //#import <objc/runtime.h>
 //#import <malloc/malloc.h>
 
+#import "KVHomeServiceProtocol.h"
+#import "BeeHive.h"
+
 #import "KVManModel.h"
 /*
  ARC模式下，autoreleasePool对象在什么时候释放？
@@ -40,14 +43,14 @@ extern void instrumentObjcMessageSends(BOOL flag);
         @autoreleasepool {
             NSString *string = [NSString stringWithFormat:@"%@",@"KVViewController1231231"];
             __autoreleasing UIImage *object = [UIImage alloc];
-            _objc_autoreleasePoolPrint();
+//            _objc_autoreleasePoolPrint();
         }
     }
     
     KVManModel *object = [[KVManModel alloc] init];
-    instrumentObjcMessageSends(YES);
+//    instrumentObjcMessageSends(YES);
     [object test];
-    instrumentObjcMessageSends(NO);
+//    instrumentObjcMessageSends(NO);
     
     
     dispatch_queue_t  queue_t1 = dispatch_queue_create("k", DISPATCH_QUEUE_SERIAL);
@@ -57,11 +60,19 @@ extern void instrumentObjcMessageSends(BOOL flag);
     dispatch_sync(queue_t1, ^{
         NSLog(@"111111");
         dispatch_sync(queue_t2, ^{
-            usleep(200);
+//            usleep(200);
             NSLog(@"33333333");
         });
     });
     NSLog(@"2222222");
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    id<KVHomeServiceProtocol> moudule = [[BeeHive shareInstance] createService:@protocol(KVHomeServiceProtocol)];
+    moudule.itemId = @"123123";
+    UIViewController *vc = [moudule getHomeViewContoller];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
